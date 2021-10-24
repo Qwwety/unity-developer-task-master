@@ -5,21 +5,24 @@ public abstract class CObjects : MonoBehaviour
     [SerializeField] private SerializVariablesObjects SerializVariable;
 
     private Rigidbody Rigidbody;
-
     protected int HP{ get; set; }
-
-    public abstract void GetHit(int Damage);
+    public virtual void GetHit(int Damage)
+    {
+        HP -= Damage;
+        if (HP <= 0)
+        {
+            Death();
+        }
+    }
     protected void Death()
     {
         Destroy(this.gameObject);
     }
-
-    protected void  Start()
+    protected void Start()
     {
         Rigidbody = GetComponent<Rigidbody>();
         HP = SerializVariable.HP;
     }
-
     protected void ScreenControll()
     {
         var onScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -40,5 +43,5 @@ public abstract class CObjects : MonoBehaviour
         var worldCoordinates = Camera.main.ScreenToWorldPoint(newPosition);
         this.transform.position = new Vector3(worldCoordinates.x,0, worldCoordinates.z);
     }
-
+    protected abstract void Spawn();
 }

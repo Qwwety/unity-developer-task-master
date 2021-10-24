@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MovementClassic : CMovement
+public class PlayerMovementClassic : CPlayerMovement
 {
     protected override void Rotation()
     {

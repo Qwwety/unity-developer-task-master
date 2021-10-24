@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class VariablesMovement<T>
+public class VariablesPlayerMovement
 {
     [SerializeField]
-    public T MaxMovementSpeed;
-    public T MovementSpeed;
-    public T TurnSpeed;
+    public int MaxMovementSpeed;
+    public int MovementSpeed;
+    public int TurnSpeed;
 }
-public class VariablesObjects<T>
+public class VariablesObjects
 {
     [SerializeField]
-    public T HP;
+    public int HP;
 }
 
-[System.Serializable] public class SerializVariablesMovement : VariablesMovement<int> { }
-[System.Serializable] public class SerializVariablesObjects : VariablesObjects<int> { }
+[System.Serializable] public class SerializVariablesPlayerMovement : VariablesPlayerMovement { }
+[System.Serializable] public class SerializVariablesObjects : VariablesObjects { }
 

@@ -29,7 +29,7 @@ public class SpawnSpaceShip : MonoBehaviour
             yield return new WaitForSeconds(SpawnRate);
             Destination = SetSpaceShipPosition();
             Instantiate(SpaceShip, Destination, Quaternion.identity);
-            MovementSpaceShip.Instance.Destination = SetDestination(Destination);
+            SpaceShipMovement.Instance.Destination = SetDestination(Destination);
         }
     }
     private void SetScreenSeatings()

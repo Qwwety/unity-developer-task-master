@@ -1,34 +1,24 @@
 ﻿using UnityEngine;
 
 [SerializeField]
-public abstract class CMovement : MonoBehaviour
+public abstract class CPlayerMovement : CObjectMovement
 {
-    [SerializeField] private SerializVariablesMovement SerializVariable;
+    [SerializeField] private SerializVariablesPlayerMovement SerializVariable;
 
-    private Rigidbody Rigidbody;
-
-    protected int MovementSpeed { get; set; }
-    protected int MaxMovementSpeed { get; set; }
     protected int TurnSpeed { get; set; }
     protected float VerticalMovment { get; set; }
     protected float HorizontalMovment { get; set; }
 
-    protected abstract void GetAxis();
     protected abstract void Rotation();
-
-    protected void Movement()
-    {
-        Vector3 MoveDirection = Rigidbody.transform.forward * -VerticalMovment; // определение направление движения 
-        Rigidbody.AddForce(MoveDirection * MovementSpeed, ForceMode.Acceleration);
-    }
-    protected void Start()
+    protected override void Start()
     {
         Rigidbody = GetComponent<Rigidbody>();
         MovementSpeed = SerializVariable.MovementSpeed;
         MaxMovementSpeed = SerializVariable.MaxMovementSpeed;
         TurnSpeed = SerializVariable.TurnSpeed;
     }
-    protected void FixedUpdate()
+    protected abstract void GetAxis();
+    protected override void FixedUpdate()
     {
         if (Rigidbody.velocity.magnitude>MaxMovementSpeed)
         {
@@ -36,9 +26,14 @@ public abstract class CMovement : MonoBehaviour
         }
         GetAxis();
     }
-    protected void Update()
+    protected override void Update()
     {
         Movement();
         Rotation();
+    }
+    protected override void Movement()
+    {
+        Vector3 MoveDirection = Rigidbody.transform.forward * -VerticalMovment; // определение направление движения 
+        Rigidbody.AddForce(MoveDirection * MovementSpeed, ForceMode.Acceleration);
     }
 }

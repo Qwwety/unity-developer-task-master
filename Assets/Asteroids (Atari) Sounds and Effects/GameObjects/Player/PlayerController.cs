@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : CObjects
+public class PlayerController: CObjects
 {
-    public static PlayerControler Instance;
+    public static PlayerController Instance;
     private void Awake()
     {
         Instance = this;
@@ -25,10 +25,9 @@ public class PlayerControler : CObjects
             Death();
         }
     }
-    private void Spawn()
+    protected override void Spawn()
     {
-
+        Instantiate(this, new Vector3(0,0,0),Quaternion.identity);
     }
 
-    
 }

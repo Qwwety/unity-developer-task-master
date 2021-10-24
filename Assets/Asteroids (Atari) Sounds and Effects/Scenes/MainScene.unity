@@ -571,15 +571,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7758325658946163468, guid: 48f1297dd2318964299c45721ce9b38e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.51
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7758325658946163468, guid: 48f1297dd2318964299c45721ce9b38e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7758325658946163468, guid: 48f1297dd2318964299c45721ce9b38e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7758325658946163468, guid: 48f1297dd2318964299c45721ce9b38e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983633132}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb1af3fbcb636074d89afed04eed2029, type: 3}
   m_Name: 
@@ -760,6 +760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa66f4a117d0f14b95d5989a9e69f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SerializVariable:
+    HP: 0
+  Scale: 0
 --- !u!114 &983633136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +770,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983633132}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 943e42096e4dc72409bba5b8cf367265, type: 3}
   m_Name: 
@@ -788,10 +791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c981c0d9362eaef43b6dfdd23529cc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnAmount: 1
+  PoolSize: 2
   Scale: 3
   GameObject: {fileID: 8917170989043340177, guid: 86c17ebd2e3941945821f4883c7cd8b5, type: 3}
-  PoolSize: 2
 --- !u!1 &1042985795
 GameObject:
   m_ObjectHideFlags: 0

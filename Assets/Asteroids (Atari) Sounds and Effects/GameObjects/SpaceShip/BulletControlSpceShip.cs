@@ -10,7 +10,7 @@ public class BulletControlSpceShip : MonoBehaviour
     void Start()
     {
         LookAtPlayer();
-        StartCoroutine(WaitTimeToKill());
+        StartCoroutine(WaitTimeToDie());
     }
     private void FixedUpdate()
     {
@@ -30,7 +30,7 @@ public class BulletControlSpceShip : MonoBehaviour
     {
         transform.position += transform.forward* BulletSpeed;
     }
-    IEnumerator WaitTimeToKill()
+    IEnumerator WaitTimeToDie()
     {
         yield return new WaitForSeconds(5);
         Destroy(this.gameObject);
@@ -40,8 +40,7 @@ public class BulletControlSpceShip : MonoBehaviour
     {
         if (other.tag=="Player")
         {
-            Debug.Log("Damage");
-            PlayerControler.Instance.GetHit(Damage);
+            PlayerController.Instance.GetHit(Damage);
             Destroy(this.gameObject);
         }
     }

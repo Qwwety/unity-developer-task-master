@@ -5,7 +5,6 @@ using UnityEngine;
 public class ObjectPoolDynamic : MonoBehaviour
 {
     [SerializeField] private int PoolSize;
-   // [SerializeField] private int SpawnAmount = 1;
     [SerializeField] private int Scale = 3;
     [SerializeField] private GameObject GameObject;
     
